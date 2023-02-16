@@ -44,6 +44,6 @@ public class OrdersController : ControllerBase
     {
         _context.Orders.Add(order);
         await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetByIdAsync), new { id = order.Id }, order);
+        return Ok();
     }
 }
