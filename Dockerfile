@@ -1,6 +1,5 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
-RUN adduser --disabled-password --gecos "" myuser
 
 WORKDIR /app
 
@@ -16,8 +15,7 @@ RUN dotnet publish "CCGM.csproj" -c Debug -o /app/publish
 
 FROM base AS final
 
-USER myuser
-RUN chown -R myuser:myuser /app
+USER 10001
 
 
 WORKDIR /app
