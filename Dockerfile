@@ -1,5 +1,9 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+
+RUN adduser --disabled-password --gecos "" myuser
+
+
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
@@ -13,6 +17,9 @@ FROM build AS publish
 RUN dotnet publish "CCGM.csproj" -c Debug -o /app/publish
 
 FROM base AS final
+
+USER myuser
+
 WORKDIR /app
 COPY --from=publish /app/publish .
 EXPOSE 9090
