@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_ccgm_orders_webapi_1695659585753-push-trigger-input-set
+  identifier: Build_ccgm_orders_webapi_1695659585753pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_ccgm_orders_webapi_1695659585753
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
