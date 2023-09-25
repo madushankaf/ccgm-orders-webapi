@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_ccgm_orders_webapi_1695659585753-pr-trigger-input-set
+  identifier: Build_ccgm_orders_webapi_1695659585753prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_ccgm_orders_webapi_1695659585753
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
